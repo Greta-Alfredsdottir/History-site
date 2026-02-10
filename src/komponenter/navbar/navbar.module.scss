@@ -1,0 +1,24 @@
+@use "../../style/root" as color;
+// nesting
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    a {
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: color.$little-light;
+    }
+  }
+}
+@media screen and (min-width: 750px) {
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
