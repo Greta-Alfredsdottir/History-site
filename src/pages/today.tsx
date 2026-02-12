@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import type { HistoryData } from "../types/historytypes";
 
 export function Today() {
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<HistoryData>();
 
-  const url = "http://history.muffinlabs.com/date";
+  const url = "https://history.muffinlabs.com/date";
 
   useEffect(() => {
     async function doFetchOnMount() {
@@ -13,5 +14,14 @@ export function Today() {
     }
     doFetchOnMount();
   }, []);
-  return <h1>Today</h1>;
+  return (
+    <div>
+      {data?.data?.Events.map((item) => (
+        <div>
+          <p>{item.year}</p>
+          <p>{item.text}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
