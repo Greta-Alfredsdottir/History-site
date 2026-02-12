@@ -1,22 +1,35 @@
 @use "../../style/root" as color;
 // nesting
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  li {
-    a {
-      display: block;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    a:hover {
-      background-color: color.$little-light;
+.navStyle {
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: color.$black;
+    margin: 0;
+    padding: 0;
+    li {
+      a {
+        font-family: "Limelight", sans-serif;
+        display: block;
+        text-align: center;
+        padding: 14px 150px;
+        text-decoration: none;
+        color: color.$light;
+        font-size: 36px;
+      }
+      a:hover {
+        background-color: color.$little-light;
+      }
+      a.active {
+        text-decoration: underline;
+      }
     }
   }
 }
-@media screen and (min-width: 750px) {
+@media screen and (max-width: 750px) {
   ul {
     display: flex;
     flex-direction: row;

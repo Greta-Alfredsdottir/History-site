@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { HistoryData } from "../types/historytypes";
+import { Sign } from "../komponenter/sign/sign";
 
 export function Today() {
   const [data, setData] = useState<HistoryData>();
@@ -15,13 +16,16 @@ export function Today() {
     doFetchOnMount();
   }, []);
   return (
-    <div>
-      {data?.data?.Events.map((item) => (
-        <div>
-          <p>{item.year}</p>
-          <p>{item.text}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <Sign title="Today" description="bare et eller andet" />
+      <div>
+        {data?.data?.Events.map((item) => (
+          <div>
+            <p>{item.year}</p>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

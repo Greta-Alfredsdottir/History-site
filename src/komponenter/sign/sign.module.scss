@@ -1,0 +1,31 @@
+@use "../../style/root" as color;
+
+.kasseSign {
+  background-color: color.$black;
+  height: 200px;
+  width: 700px;
+  border: 24px solid color.$dark-gray;
+  position: absolute;
+  z-index: 10;
+  top: 600px;
+  left: 400px;
+  background:
+    radial-gradient(circle, color.$light 50%, transparent 51%) top left,
+    radial-gradient(circle, color.$light 50%, transparent 51%) top right,
+    radial-gradient(circle, color.$light 50%, transparent 51%) bottom left,
+    radial-gradient(circle, color.$light 50%, transparent 51%) bottom right,
+    black;
+
+  background-size: 16px 16px; // altid ens, ellers bliver den oval
+  background-repeat: no-repeat;
+  .overSkrift {
+    color: color.$light;
+    font-family: "Limelight", sans-serif;
+    font-size: 50px;
+  }
+  .brodTekst {
+    color: color.$light;
+    font-family: "Linden Hill", serif;
+    font-size: 20px;
+  }
+}

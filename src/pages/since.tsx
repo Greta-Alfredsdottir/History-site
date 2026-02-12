@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { HistoryData } from "../types/historytypes";
+import { Sign } from "../komponenter/sign/sign";
 
 export function Since() {
   const [data, setData] = useState<HistoryData>();
@@ -15,13 +16,21 @@ export function Since() {
     doFetchOnMount();
   }, []);
   return (
-    <div>
-      {data?.data?.Events.map((item) => (
-        <div>
-          <p>{item.year}</p>
-          <p>{item.text}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <Sign
+        title="Since"
+        description="Find en historie"
+        showSearch={true}
+        onSearch={(query) => console.log(query)}
+      />
+      <div>
+        {data?.data?.Events.map((item) => (
+          <div>
+            <p>{item.year}</p>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

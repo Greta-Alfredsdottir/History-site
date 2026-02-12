@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { HistoryData } from "../types/historytypes";
+import { Sign } from "../komponenter/sign/sign";
 
 export function ByDate() {
   const [data, setData] = useState<HistoryData>();
@@ -17,13 +18,21 @@ export function ByDate() {
   }, []);
 
   return (
-    <div>
-      {data?.data?.Events.map((item) => (
-        <div>
-          <p>{item.year}</p>
-          <p>{item.text}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <Sign
+        title="On"
+        description="Find en historie"
+        showSearch={true}
+        onSearch={(query) => console.log(query)}
+      />
+      <div>
+        {data?.data?.Events.map((item) => (
+          <div>
+            <p>{item.year}</p>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
