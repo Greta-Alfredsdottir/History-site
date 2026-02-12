@@ -15,16 +15,20 @@ export function Sign({
 }: SignProps) {
   return (
     <div className={style.kasseSign}>
-      <h1 className={style.overSkrift}>{title}</h1>
+      <h1 className={style.overSkrift}>
+        {title}
+        <span>
+          {showSearch && (
+            <input
+              type="text"
+              placeholder="Søg her..."
+              onChange={(e) => onSearch?.(e.target.value)}
+              className={style.searchInput}
+            />
+          )}
+        </span>
+      </h1>
       <p className={style.brodTekst}>{description}</p>
-      {showSearch && (
-        <input
-          type="text"
-          placeholder="Søg her..."
-          onChange={(e) => onSearch?.(e.target.value)}
-          className={style.searchInput}
-        />
-      )}
     </div>
   );
 }

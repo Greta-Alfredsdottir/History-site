@@ -21,7 +21,7 @@ export function ByDate() {
     <>
       <Sign
         title="On"
-        description="Find en historie"
+        description="What happened on this day - Here you can enter a specific date to only get events that happened on this date"
         showSearch={true}
         onSearch={(query) => console.log(query)}
       />

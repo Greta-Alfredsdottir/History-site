@@ -17,7 +17,10 @@ export function Today() {
   }, []);
   return (
     <>
-      <Sign title="Today" description="bare et eller andet" />
+      <Sign
+        title="Today"
+        description="What happened on this day - historical events, deaths and births thoughout time"
+      />
       <div>
         {data?.data?.Events.map((item) => (
           <div>
