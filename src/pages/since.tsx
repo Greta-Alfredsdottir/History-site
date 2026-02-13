@@ -19,7 +19,7 @@ export function Since() {
     <>
       <Sign
         title="Since"
-        description="Find en historie"
+        description="What happened on this day - Here you can enter a specific year to get all the events that happened on this day, since that year."
         showSearch={true}
         onSearch={(query) => console.log(query)}
       />

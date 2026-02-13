@@ -4,6 +4,9 @@ import { Sign } from "../komponenter/sign/sign";
 
 export function ByDate() {
   const [data, setData] = useState<HistoryData>();
+  const handleSearch = (q: string) => {
+    setData(q);
+  };
 
   const url = "https://history.muffinlabs.com/date/2/14";
 

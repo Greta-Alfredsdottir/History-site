@@ -13,6 +13,11 @@ export function Sign({
   showSearch = false,
   onSearch,
 }: SignProps) {
+  const handelKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSearch?.(e.currentTarget.value);
+    }
+  };
   return (
     <div className={style.kasseSign}>
       <h1 className={style.overSkrift}>
@@ -23,6 +28,7 @@ export function Sign({
               type="text"
               placeholder="Søg her..."
               onChange={(e) => onSearch?.(e.target.value)}
+              onKeyDown={handelKeyDown}
               className={style.searchInput}
             />
           )}
