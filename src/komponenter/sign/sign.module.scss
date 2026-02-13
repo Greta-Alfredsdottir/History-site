@@ -2,13 +2,13 @@
 
 .kasseSign {
   background-color: color.$black;
-  height: 200px;
-  width: 700px;
+  height: 30vh;
+  width: 50vw;
   border: 24px solid color.$dark-gray;
   position: absolute;
   z-index: 10;
-  top: 600px;
-  left: 400px;
+  top: 80vh;
+  left: 25vw;
   background:
     radial-gradient(circle, color.$light 50%, transparent 51%) top left,
     radial-gradient(circle, color.$light 50%, transparent 51%) top right,

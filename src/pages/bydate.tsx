@@ -4,11 +4,12 @@ import { Sign } from "../komponenter/sign/sign";
 
 export function ByDate() {
   const [data, setData] = useState<HistoryData>();
+  const [input, setInput] = useState<string>();
   const handleSearch = (q: string) => {
-    setData(q);
+    setInput(q);
   };
 
-  const url = "https://history.muffinlabs.com/date/2/14";
+  const url = "https://history.muffinlabs.com/date/" + input;
 
   useEffect(() => {
     async function doFetchOnMount() {
@@ -18,7 +19,7 @@ export function ByDate() {
       console.log(data);
     }
     doFetchOnMount();
-  }, []);
+  }, [input]);
 
   return (
     <>
@@ -26,7 +27,7 @@ export function ByDate() {
         title="On"
         description="What happened on this day - Here you can enter a specific date to only get events that happened on this date"
         showSearch={true}
-        onSearch={(query) => console.log(query)}
+        onSearch={(query) => handleSearch(query)}
       />
       <div>
         {data?.data?.Events.map((item) => (
